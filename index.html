@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Rosa | Dev</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link  rel="stylesheet" href="css/output.css">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-50 font-sans transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-code text-indigo-600 text-2xl mr-2 dark:text-indigo-400"></i>
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">Junior Rosa</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-indigo-400">Home</a>
+                    <a href="#projects" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-indigo-400">Projetos</a>
+                    <a href="#skills" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-indigo-400">Skills</a>
+                    <a href="#about" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-indigo-400">Sobre</a>
+                    <a href="#contact" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-indigo-400">Contato</a>
+                    <button id="theme-toggle" class="p-2 rounded-full focus:outline-none" >
+                        <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:hover:bg-gray-700">
+                        <span class="sr-only">Abrir menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-indigo-400 dark:hover:bg-gray-700">Home</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-indigo-400 dark:hover:bg-gray-700">Projetos</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-indigo-400 dark:hover:bg-gray-700">Skills</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-indigo-400 dark:hover:bg-gray-700">Contato</a>
+                <button id="theme-toggle-mobile" class="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-yellow-300 dark:hover:bg-gray-700" >
+                    Alterar Tema
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- <section id="home" class="py-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white"> -->
+    <section id="home" class="py-20 bg-gradient-to-r from-violet-400 via-purple-400 to-pink-500 text-gray-900 dark:from-indigo-500 dark:via-purple-600 dark:to-pink-500 dark:text-white">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col-reverse md:flex-row items-center md:justify-between gap-12">
+                
+                <!-- Texto e Botões -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                        Olá, Sou o <span class="text-yellow-300">Junior Rosa</span>
+                    </h1>
+                    <div class="typewriter text-2xl md:text-3xl font-semibold mb-4 "></div>
+                    <p class="text-lg mb-8">
+                        Desenvolvo soluções de automação que otimizam processos internos, resultando em aumento de eficiência operacional.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                        <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300 shadow-lg">Veja Projetos</a>
+                        <a href="#contact" class="border-2 border-gray-800 text-gray-900 dark:text-white dark:border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition duration-300">Entre em contato</a>
+                    </div>
+                </div>
+    
+                <!-- Imagem -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+
+                        <div class="absolute inset-0 rounded-full opacity-40 bg-indigo-300 dark:bg-indigo-500 mix-blend-screen floating z-0"></div>
+                        <div class="absolute inset-4 rounded-full opacity-40 bg-indigo-200 dark:bg-indigo-400 mix-blend-screen floating z-0" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute inset-8 rounded-full opacity-40 bg-indigo-100 dark:bg-indigo-300 mix-blend-screen floating z-0" style="animation-delay: 1s;"></div>
+                        <img src="img/profile.png" 
+                             alt="Developer" 
+                             class="absolute w-full h-full object-cover rounded-full border-4 border-white shadow-xl">
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Meus Projetos</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Aqui são alguns dos meus projetos desenvolvidos. Clique para saber mais.</p>
+                
+                <div class="mt-8 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <input type="text" id="project-search" placeholder="Buscar projetos..." 
+                               class="w-full px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <button class="absolute right-3 top-3 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex justify-center space-x-4">
+                    <button class="project-filter px-4 py-2 rounded-full bg-gray-200 bg-indigo-100 text-indigo-700 dark:bg-indigo-900 hover:bg-indigo-200 transition dark:bg-gray-700 dark:text-gray-100" data-filter="all">Todos</button>
+                    <button class="project-filter px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-indigo-200 transition dark:bg-gray-700 dark:text-gray-100" data-filter="web">Web</button>
+                    <button class="project-filter px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-indigo-200 transition dark:bg-gray-700 dark:text-gray-100" data-filter="mobile">Mobile</button>
+                    <button class="project-filter px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-indigo-200 transition dark:bg-gray-700 dark:text-gray-100" data-filter="api">API</button>
+                </div>
+            </div>
+            
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Minhas Habilidades</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Tecnologias e ferramentas que tenho proficiência</p>
+            </div>
+
+            
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <i class="fab fa-python text-blue-600 text-5xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Python</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <img src="img/django_logo.png" alt="django" class="w-12 h-12 mb-4">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Django</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-green-400 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <img src="img/Powershell.png" alt="Powershell" class="w-12 h-12 mb-4">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Powershell</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-blue-300 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <img src="img/zabbix_logo.png" alt="Zabbix" class="w-12 h-12 mb-4">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Zabbix</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-red-800 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <img src="img/jenkins_logo.png" alt="Jenkins" class="w-12 h-12 mb-4">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Jenkins</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-rose-800 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <i class="fab fa-docker text-blue-400 text-5xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Docker</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-blue-400 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <img src="img/grafana_logo.png" alt="Grafana" class="w-12 h-12 mb-4">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Grafana</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-orange-400 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <i class="fab fa-js text-yellow-400 text-5xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">JavaScript</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                     
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-database text-blue-700 text-5xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">SQL</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-blue-700 h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <i class="fab fa-gitlab text-orange-400 text-5xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Gitlab</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-orange-400 h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <i class="fab fa-github text-gray-900 text-5xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Github</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-gray-900 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="skill-card p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition dark:bg-gray-700">
+                    <div class="flex flex-col items-center">
+                        <i class="fab fa-git-alt text-orange-500 text-5xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Git</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3 dark:bg-gray-600">
+                            <div class="bg-orange-500 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 text-center">Outras Tecnologias</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="skill-pill px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium dark:bg-indigo-900 dark:text-indigo-100">TypeScript</span>
+                    <span class="skill-pill px-4 py-2 bg-blue-200 text-blue-600 rounded-full text-sm font-medium dark:bg-blue-700 dark:text-blue-100">React</span>
+                    <span class="skill-pill px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium dark:bg-red-900 dark:text-red-100">Bash</span>
+                    <span class="skill-pill px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium dark:bg-yellow-900 dark:text-yellow-100">Kubernetes</span>
+                    <span class="skill-pill px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium dark:bg-purple-900 dark:text-purple-100">GraphQL</span>
+                    <span class="skill-pill px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium dark:bg-blue-900 dark:text-blue-100">HTML</span>
+                    <span class="skill-pill px-4 py-2 bg-pink-100 text-pink-800 rounded-full text-sm font-medium dark:bg-pink-900 dark:text-pink-100">CSS</span>
+                    <span class="skill-pill px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium dark:bg-gray-700 dark:text-gray-100">Rancher</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about" class="py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Sobre Mim</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Conheça um pouco mais sobre meu perfil profissional, áreas de atuação e valores que carrego no desenvolvimento de soluções.
+            </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8 transition-all hover:shadow-xl">
+            <div class="space-y-6 text-gray-700 dark:text-gray-300 text-base leading-relaxed text-justify">
+                <p>
+                    Sou desenvolvedor com experiência em automação de processos utilizando linguagens como 
+                    <strong class="text-indigo-600 dark:text-indigo-400">Python</strong>, <strong>Shell Script</strong> e <strong>PowerShell</strong>, com forte atuação em ambientes 
+                    <strong>Linux</strong> e <strong>Windows</strong>. Especializado no desenvolvimento de aplicações back-end com 
+                    <strong class="text-green-500">Django</strong>, foco meus esforços em eliminar tarefas repetitivas, melhorar a produtividade e garantir a escalabilidade das soluções entregues.
+                </p>
+                <p>
+                    Tenho facilidade em compreender problemas técnicos complexos e transformá-los em soluções objetivas e eficientes, aplicando boas práticas de 
+                    <strong>programação orientada a objetos</strong>, <strong>testes automatizados</strong> e <strong>documentação técnica</strong>.
+                    Possuo mentalidade analítica, gosto por desafios e sou comprometido com resultados de alta qualidade.
+                </p>
+                <p>
+                    Busco constantemente evoluir tecnicamente, seja por meio de <strong>aprendizado contínuo</strong> ou na 
+                    <strong>implementação de soluções inovadoras</strong> em projetos reais.
+                    Estou aberto a oportunidades de <strong>colaboração em projetos</strong>, <strong>consultorias técnicas</strong> ou 
+                    <strong>integrações complexas</strong> que exijam conhecimento técnico sólido e visão estratégica.
+                </p>
+                <p>
+                    Tenho formação técnica em <strong>Mecânica</strong>, o que me proporciona um sólido entendimento de processos industriais e operacionais, 
+                    além de formação técnica em <strong>Eletrônica</strong>, que complementa minha capacidade de integrar soluções de software com componentes físicos e automação.
+                    Atualmente, estou cursando <strong>Análise e Desenvolvimento de Sistemas (ADS)</strong> para aprimorar ainda mais minhas habilidades em desenvolvimento de software e arquitetura de sistemas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Entre em contato</h2> 
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Ficarei feliz em conversar sobre tecnologia, projetos ou possíveis colaborações. Me envie uma mensagem!</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nome</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+                        </div>
+                        <input type="hidden" name="title" value="Contato via Portfólio">
+                        <input type="hidden" name="time" id="timestamp">
+
+                        <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow-lg">Enviar Mensagem</button>
+                    </form>
+                    
+                    <div id="form-success" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg dark:bg-green-900 dark:text-green-100">
+                        <i class="fas fa-check-circle mr-2"></i> Sua mensagem foi enviada com sucesso!
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-lg dark:bg-gray-800 dark:border dark:border-gray-700">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Informações de contato</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-lg text-indigo-600 dark:bg-indigo-900 dark:text-indigo-300">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Email</h4>
+                                    <p class="text-base text-gray-900 dark:text-white">jr.dasrosas@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <!-- <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-lg text-indigo-600 dark:bg-indigo-900 dark:text-indigo-300">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Telefone</h4>
+                                    <p class="text-base text-gray-900 dark:text-white"></p>
+                                </div>
+                            </div> -->
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-lg text-indigo-600 dark:bg-indigo-900 dark:text-indigo-300">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Localização</h4>
+                                    <p class="text-base text-gray-900 dark:text-white">Porto Alegre, RS - Brasil</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">Conecte-se comigo através</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/Junior-Rosa" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-gray-200 transition dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/joeldarosajunior/" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-gray-200 transition dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <!-- <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-gray-200 transition dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-gray-200 transition dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+                                    <i class="fab fa-stack-overflow"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6  md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-code text-indigo-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Junior Rosa</span>
+                    </div>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">
+                            "Automatizando processos, acelerando resultados."
+                        </p>
+                    
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                    <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider">Navegação</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="#home" class="dark:text-gray-400 hover:font-bold dark:hover:text-whitea></li>
+                            <li><a href="#projects" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">Projetos</a></li>
+                            <li><a href="#skills" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">Habilidades</a></li>
+                            <li><a href="#about" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">Sobre</a></li>
+                            <li><a href="#contact" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider">Projetos</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="#" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">Web Apps</a></li>
+                            <li><a href="#" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">Mobile Apps</a></li>
+                            <li><a href="#" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">APIs</a></li>
+                            <li><a href="#" class="dark:text-gray-400 hover:font-bold dark:hover:text-white transition">Open Source</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider">Legal</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Junior Rosa. Todos os direitos reservados.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <button id="back-to-top" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+                        <i class="fas fa-arrow-up"></i> Voltar ao Inicio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75 dark:bg-gray-900 dark:opacity-90"></div>
+            </div>
+            
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full dark:bg-gray-800">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 dark:bg-gray-800">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <div class="flex justify-between items-start">
+                                <h3 id="modal-title" class="text-2xl leading-6 font-bold text-gray-900 dark:text-white mb-2"></h3>
+                                <button id="close-modal" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <!-- Tags will be added here -->
+                                </div>
+                                
+                                <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-lg mb-4">
+                                
+                                <p id="modal-description" class="text-gray-600 dark:text-gray-300 mb-4"></p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Tecnologias Usadas</h4>
+                                        <ul id="modal-technologies" class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                            <!-- Technologies will be added here -->
+                                        </ul>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Project Details</h4>
+                                        <ul id="modal-details" class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                            <!-- Details will be added here -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex space-x-4">
+                                    <a id="modal-live-link" href="#" target="_blank" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                                        <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                                    </a>
+                                    <a id="modal-code-link" href="#" target="_blank" class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+                                        <i class="fab fa-github mr-2"></i> View Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
