@@ -1,6 +1,6 @@
 # 👨‍💻 Junior Rosa — Portfólio Profissional
 
-[![Status](https://img.shields.io/badge/Status-Online-success?style=flat-square)](https://juniorrosa.dev)
+[![Status](https://img.shields.io/badge/Status-Online-success?style=flat-square)](https://junior-rosa.github.io/)
 [![Tech](https://img.shields.io/badge/Built%20With-HTML%2C%20CSS%2C%20JS%2C%20Tailwind-blue?style=flat-square)](#tech-stack)
 [![Email](https://img.shields.io/badge/Contato-jr.dasrosas%40email.com-yellowgreen?style=flat-square&logo=gmail)](mailto:jr.dasrosas@gmail.com)
 
