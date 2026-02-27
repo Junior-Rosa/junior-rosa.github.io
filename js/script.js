@@ -4,7 +4,7 @@ const projects = [
         title: "Pyznuny",
         description: "Um pacote python para conectar facilmente ao ITSM Znuny",
         image: "../img/pyznuny.png",
-        tags: ["python", "pacote", "dev"],
+        tags: ["python", "pacote", "dev", "api"],
         technologies: ["Python", "Pytest", "Sphinx", "httpx"],
         details: ["Fácil conexão", "Autenticação de usuário", "CRUD de Tickets"],
         liveLink: "https://pypi.org/project/pyznuny/",
