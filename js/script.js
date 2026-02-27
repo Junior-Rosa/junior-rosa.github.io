@@ -1,15 +1,15 @@
 const projects = [
-    // {
-    //     id: 1,
-    //     title: "E-commerce Platform",
-    //     description: "A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.",
-    //     image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    //     tags: ["web", "react", "node"],
-    //     technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
-    //     details: ["Responsive design", "User authentication", "Product search and filtering", "Order tracking"],
-    //     liveLink: "https://example-ecommerce.com",
-    //     codeLink: "https://github.com/example/ecommerce"
-    // },
+    {
+        id: 1,
+        title: "Pyznuny",
+        description: "Um pacote python para conectar facilmente ao ITSM Znuny",
+        image: "../img/pyznuny.png",
+        tags: ["python", "pacote", "dev"],
+        technologies: ["Python", "Pytest", "Sphinx", "httpx"],
+        details: ["Fácil conexão", "Autenticação de usuário", "CRUD de Tickets"],
+        liveLink: "https://pypi.org/project/pyznuny/",
+        codeLink: "https://github.com/Junior-Rosa/py-znuny"
+    },
     // {
     //     id: 2,
     //     title: "Task Management App",
@@ -152,6 +152,8 @@ function renderProjects(projectsToRender) {
         const projectCard = document.createElement('div');
         projectCard.className = 'bg-white rounded-xl overflow-hidden shadow-md card-hover dark:bg-gray-800 dark:border dark:border-gray-700';
         projectCard.className = 'bg-white rounded-xl overflow-hidden shadow-md card-hover dark:bg-gray-800 dark:border dark:border-gray-700 flex flex-col min-h-[500px]';
+
+
         projectCard.innerHTML = `
     <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
     <div class="p-6 flex flex-col flex-grow">
