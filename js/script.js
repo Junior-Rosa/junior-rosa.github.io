@@ -115,16 +115,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+    
+            // Only handle internal hash links
+            if (!href || !href.startsWith('#')) return;
+    
+            // Ignore empty hash
+            if (href === '#') return;
+    
+            const target = document.querySelector(href);
+            if (!target) return;
+    
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
+    
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+    
+            if (mobileMenu) {
                 mobileMenu.classList.add('hidden');
             }
         });
