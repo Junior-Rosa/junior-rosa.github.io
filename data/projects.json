@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "PyZnuny - Python Integration for Znuny",
+        "description": "Biblioteca Python que integra com o Znuny (sistema de ticketing open-source), automatizando a gestão de tickets e melhorando fluxos de atendimento.",
+        "images": ["img/projects/pyznuny.png"],
+        "tags": ["api"],
+        "technologies": ["Python", "REST API", "Znuny"],
+        "details": [
+            "Automação de criação e atualização de tickets",
+            "Autenticação via API",
+            "Tratamento de erros e retries"
+        ],
+        "liveLink": "https://pypi.org/project/pyznuny/",
+        "codeLink": "https://github.com/junior-rosa/pyznuny"
+    },
+    {
+        "id": 2,
+        "title": "YGG - Hub de Monitoramento e Atendimento",
+        "description": "Plataforma interna desenvolvida em Django que centraliza monitoramento, atendimento e relacionamento com o cliente em um único hub. Integra Zabbix para observabilidade de infraestrutura, processa eventos de tickets via pipeline assíncrono com Celery (idempotente, ordenado por ticket) remapeando e despachando dados para sistemas externos, e conta com um módulo de CSAT para pesquisas de satisfação configuráveis com score ponderado.",
+        "images": ["img/projects/ygg.png"],
+        "tags": ["web", "api"],
+        "technologies": ["Django", "Django REST Framework", "Celery", "Redis", "PostgreSQL", "Tailwind CSS", "Docker", "Kubernetes"],
+        "details": [
+            "Integração com Zabbix para monitoramento de infraestrutura",
+            "Pipeline assíncrono com Celery: idempotência e ordenação FIFO por ticket",
+            "Remapeamento configurável de campos entre sistemas de origem e destino",
+            "Módulo de CSAT com pesquisas dinâmicas, perguntas configuráveis e score ponderado",
+            "Deploy containerizado com Docker/Kubernetes e CI/CD via Jenkins"
+        ],
+        "liveLink": "",
+        "codeLink": ""
+    }
+]

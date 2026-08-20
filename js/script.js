@@ -1,71 +1,4 @@
-const projects = [
-    // {
-    //     id: 1,
-    //     title: "E-commerce Platform",
-    //     description: "A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.",
-    //     image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    //     tags: ["web", "react", "node"],
-    //     technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
-    //     details: ["Responsive design", "User authentication", "Product search and filtering", "Order tracking"],
-    //     liveLink: "https://example-ecommerce.com",
-    //     codeLink: "https://github.com/example/ecommerce"
-    // },
-    // {
-    //     id: 2,
-    //     title: "Task Management App",
-    //     description: "A productivity app for managing tasks with drag-and-drop functionality and team collaboration features.",
-    //     image: "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    //     tags: ["web", "mobile", "react"],
-    //     technologies: ["React Native", "Firebase", "Redux"],
-    //     details: ["Cross-platform (iOS & Android)", "Real-time updates", "Task categorization", "Due date reminders"],
-    //     liveLink: "https://example-taskapp.com",
-    //     codeLink: "https://github.com/example/taskapp"
-    // },
-    // {
-    //     id: 3,
-    //     title: "Weather API Service",
-    //     description: "A RESTful API that provides weather data for locations worldwide with historical data access.",
-    //     image: "https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    //     tags: ["api", "node"],
-    //     technologies: ["Node.js", "Express", "MongoDB", "Redis"],
-    //     details: ["Geolocation support", "Caching for performance", "Rate limiting", "JSON responses"],
-    //     liveLink: "https://api.example-weather.com",
-    //     codeLink: "https://github.com/example/weather-api"
-    // },
-    // {
-    //     id: 4,
-    //     title: "Social Media Dashboard",
-    //     description: "Analytics dashboard for social media managers to track performance across multiple platforms.",
-    //     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    //     tags: ["web", "react"],
-    //     technologies: ["React", "Chart.js", "Twitter API", "Instagram API"],
-    //     details: ["Data visualization", "Custom date ranges", "Export reports", "Multi-account support"],
-    //     liveLink: "https://example-social-dashboard.com",
-    //     codeLink: "https://github.com/example/social-dashboard"
-    // },
-    // {
-    //     id: 5,
-    //     title: "Fitness Tracker Mobile App",
-    //     description: "Mobile application for tracking workouts, nutrition, and progress with personalized recommendations.",
-    //     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    //     tags: ["mobile", "react"],
-    //     technologies: ["React Native", "Firebase", "Apple HealthKit", "Google Fit API"],
-    //     details: ["Workout logging", "Nutrition tracking", "Progress photos", "Community challenges"],
-    //     liveLink: "https://example-fitnesstracker.com",
-    //     codeLink: "https://github.com/example/fitness-tracker"
-    // },
-    // {
-    //     id: 6,
-    //     title: "Document Management API",
-    //     description: "Backend service for uploading, storing, and managing documents with role-based access control.",
-    //     image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    //     tags: ["api", "node"],
-    //     technologies: ["Node.js", "AWS S3", "JWT Authentication", "PostgreSQL"],
-    //     details: ["File versioning", "Metadata storage", "PDF preview generation", "Audit logging"],
-    //     liveLink: "https://api.example-docs.com",
-    //     codeLink: "https://github.com/example/doc-management"
-    // }
-];
+let projects = [];
 
 // DOM Elements
 const projectsContainer = document.getElementById('projects-container');
@@ -102,8 +35,18 @@ typeText();
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    // Load projects
-    renderProjects(projects);
+    // Load projects from JSON
+    fetch('data/projects.json')
+        .then(res => res.json())
+        .then(data => {
+            projects = data;
+            renderProjects(projects);
+        })
+        .catch(err => {
+            console.error('Erro ao carregar projetos:', err);
+            renderProjects([]);
+        });
+
     const htmlElement = document.documentElement;
 
     if (localStorage.getItem('darkMode') === 'true') {
@@ -114,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.innerHTML = '<i class="fas fa-moon text-gray-600"></i>';
     }
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for anchor links (skip modal external links, they get their real href set later)
+    document.querySelectorAll('a[href^="#"]:not(#modal-live-link):not(#modal-code-link)').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
@@ -149,11 +92,15 @@ function renderProjects(projectsToRender) {
     }
 
     projectsToRender.forEach(project => {
+        const images = project.images || [];
+        const thumb = images.length
+            ? `<img src="${images[0]}" alt="${project.title}" class="w-full h-48 object-cover">`
+            : `<div class="w-full h-48 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"><i class="fas fa-image text-4xl"></i></div>`;
+
         const projectCard = document.createElement('div');
-        projectCard.className = 'bg-white rounded-xl overflow-hidden shadow-md card-hover dark:bg-gray-800 dark:border dark:border-gray-700';
         projectCard.className = 'bg-white rounded-xl overflow-hidden shadow-md card-hover dark:bg-gray-800 dark:border dark:border-gray-700 flex flex-col min-h-[500px]';
         projectCard.innerHTML = `
-    <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+    ${thumb}
     <div class="p-6 flex flex-col flex-grow">
         <div class="flex justify-between items-start mb-2">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white">${project.title}</h3>
@@ -163,11 +110,11 @@ function renderProjects(projectsToRender) {
         </div>
         <p class="text-gray-600 dark:text-gray-300 mb-4">${project.description}</p>
         <div class="flex flex-wrap gap-2 mb-4">
-            ${project.technologies.slice(0, 3).map(tech => 
+            ${project.technologies.slice(0, 3).map(tech =>
                 `<span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full dark:bg-gray-700 dark:text-gray-200">${tech}</span>`
             ).join('')}
         </div>
-        <button class="view-project-btn mt-auto w-full bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition" 
+        <button class="view-project-btn mt-auto w-full bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition"
                 data-id="${project.id}">
             Detalhes do projeto
         </button>
@@ -188,10 +135,10 @@ function renderProjects(projectsToRender) {
 // Open project modal with details
 function openProjectModal(project) {
     document.getElementById('modal-title').textContent = project.title;
-    document.getElementById('modal-image').src = project.image;
-    document.getElementById('modal-image').alt = project.title;
     document.getElementById('modal-description').textContent = project.description;
-    
+
+    renderCarousel(project.images || []);
+
     // Set technologies
     const technologiesList = document.getElementById('modal-technologies');
     technologiesList.innerHTML = '';
@@ -200,7 +147,7 @@ function openProjectModal(project) {
         li.textContent = tech;
         technologiesList.appendChild(li);
     });
-    
+
     // Set details
     const detailsList = document.getElementById('modal-details');
     detailsList.innerHTML = '';
@@ -209,11 +156,28 @@ function openProjectModal(project) {
         li.textContent = detail;
         detailsList.appendChild(li);
     });
-    
-    // Set links
-    document.getElementById('modal-live-link').href = project.liveLink;
-    document.getElementById('modal-code-link').href = project.codeLink;
-    
+
+    // Set links (hide button when project has no public link, e.g. private repo)
+    const liveLinkEl = document.getElementById('modal-live-link');
+    if (project.liveLink) {
+        liveLinkEl.href = project.liveLink;
+        liveLinkEl.classList.remove('hidden');
+        liveLinkEl.classList.add('inline-flex');
+    } else {
+        liveLinkEl.classList.add('hidden');
+        liveLinkEl.classList.remove('inline-flex');
+    }
+
+    const codeLinkEl = document.getElementById('modal-code-link');
+    if (project.codeLink) {
+        codeLinkEl.href = project.codeLink;
+        codeLinkEl.classList.remove('hidden');
+        codeLinkEl.classList.add('inline-flex');
+    } else {
+        codeLinkEl.classList.add('hidden');
+        codeLinkEl.classList.remove('inline-flex');
+    }
+
     // Set tags
     const tagsContainer = document.querySelector('#project-modal .flex.flex-wrap.gap-2.mb-4');
     tagsContainer.innerHTML = '';
@@ -223,11 +187,98 @@ function openProjectModal(project) {
         span.textContent = tag;
         tagsContainer.appendChild(span);
     });
-    
+
     // Show modal
     projectModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
+
+// Carousel state and rendering
+let currentSlide = 0;
+
+function renderCarousel(images) {
+    currentSlide = 0;
+    const track = document.getElementById('modal-carousel');
+    const dots = document.getElementById('carousel-dots');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    track.innerHTML = '';
+    dots.innerHTML = '';
+
+    if (!images.length) {
+        track.innerHTML = `<div class="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500"><i class="fas fa-image text-4xl"></i></div>`;
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        return;
+    }
+
+    images.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Screenshot ${i + 1}`;
+        img.className = `carousel-slide absolute inset-0 w-full h-full object-contain cursor-zoom-in transition-opacity duration-300 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`;
+        img.addEventListener('click', () => openLightbox(src));
+        track.appendChild(img);
+    });
+
+    if (images.length > 1) {
+        images.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = `w-2.5 h-2.5 rounded-full transition ${i === 0 ? 'bg-white' : 'bg-white/50'}`;
+            dot.addEventListener('click', () => showSlide(i));
+            dots.appendChild(dot);
+        });
+        prevBtn.classList.remove('hidden');
+        prevBtn.classList.add('flex');
+        nextBtn.classList.remove('hidden');
+        nextBtn.classList.add('flex');
+    } else {
+        prevBtn.classList.add('hidden');
+        prevBtn.classList.remove('flex');
+        nextBtn.classList.add('hidden');
+        nextBtn.classList.remove('flex');
+    }
+}
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('#modal-carousel .carousel-slide');
+    const dots = document.querySelectorAll('#carousel-dots button');
+    if (!slides.length) return;
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => {
+        s.classList.toggle('opacity-100', i === currentSlide);
+        s.classList.toggle('opacity-0', i !== currentSlide);
+        s.classList.toggle('pointer-events-none', i !== currentSlide);
+    });
+    dots.forEach((d, i) => {
+        d.classList.toggle('bg-white', i === currentSlide);
+        d.classList.toggle('bg-white/50', i !== currentSlide);
+    });
+}
+
+// Image lightbox (zoom)
+const imageLightbox = document.getElementById('image-lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src) {
+    lightboxImage.src = src;
+    imageLightbox.classList.remove('hidden');
+    imageLightbox.classList.add('flex');
+}
+
+function closeLightbox() {
+    imageLightbox.classList.add('hidden');
+    imageLightbox.classList.remove('flex');
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+imageLightbox.addEventListener('click', (e) => {
+    if (e.target === imageLightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
 
 // Close project modal
 function closeProjectModal() {
@@ -264,7 +315,12 @@ projectFilters.forEach(filter => {
     });
 });
 
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
 closeModal.addEventListener('click', closeProjectModal);
+
+document.getElementById('carousel-prev').addEventListener('click', () => showSlide(currentSlide - 1));
+document.getElementById('carousel-next').addEventListener('click', () => showSlide(currentSlide + 1));
 
 backToTop.addEventListener('click', () => {
     window.scrollTo({
