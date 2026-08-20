@@ -61,13 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]:not(#modal-live-link):not(#modal-code-link)').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
+    
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+    
+            if (mobileMenu) {
                 mobileMenu.classList.add('hidden');
             }
         });
@@ -99,6 +99,8 @@ function renderProjects(projectsToRender) {
 
         const projectCard = document.createElement('div');
         projectCard.className = 'bg-white rounded-xl overflow-hidden shadow-md card-hover dark:bg-gray-800 dark:border dark:border-gray-700 flex flex-col min-h-[500px]';
+
+
         projectCard.innerHTML = `
     ${thumb}
     <div class="p-6 flex flex-col flex-grow">
